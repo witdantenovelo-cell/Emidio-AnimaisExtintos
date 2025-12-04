@@ -1,0 +1,401 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #001f3f 0%, #004080 100%);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(0, 0, 50, 0.6);
+  backdrop-filter: blur(6px);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  color: #7ed6ff;
+}
+
+header p {
+  font-size: 1rem;
+  color: #cce7ff;
+  margin-top: 0.5rem;
+}
+
+nav {
+  margin-top: 1.5rem;
+}
+
+.btn {
+  background-color: #00aaff;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  margin: 0.4rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #0088cc;
+}
+
+/* Container principal */
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #9aefff;
+}
+
+/* Grid dos cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 204, 255, 0.5);
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 60, 0.5);
+  color: #7ed6ff;
+  font-size: 1.2rem;
+}
+
+.card .meta {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #bdefff;
+}
+
+.card .facts {
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  color: #e6faff;
+}
+
+/* Curiosidades */
+.curio-list {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.curio-list ul {
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+.curio-list li {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0.5rem auto;
+  padding: 0.8rem 1.2rem;
+  width: 80%;
+  border-radius: 1rem;
+  color: #d8f7ff;
+  transition: background 0.3s;
+}
+
+.curio-list li:hover {
+  background: rgba(0, 153, 255, 0.3);
+}
+
+/* Bolhas animadas */
+.bolhas span {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: subir 10s linear infinite;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.bolhas span:nth-child(1) {
+  left: 10%;
+  width: 15px;
+  height: 15px;
+  animation-duration: 7s;
+}
+.bolhas span:nth-child(2) {
+  left: 30%;
+  width: 10px;
+  height: 10px;
+  animation-duration: 9s;
+}
+.bolhas span:nth-child(3) {
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  animation-duration: 11s;
+}
+.bolhas span:nth-child(4) {
+  left: 70%;
+  width: 12px;
+  height: 12px;
+  animation-duration: 8s;
+}
+.bolhas span:nth-child(5) {
+  left: 85%;
+  width: 20px;
+  height: 20px;
+  animation-duration: 10s;
+}
+.bolhas span:nth-child(6) {
+  left: 95%;
+  width: 8px;
+  height: 8px;
+  animation-duration: 6s;
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #aee6ff;
+  background: rgba(0, 0, 30, 0.6);
+  margin-top: 3rem;
+}
+/* ===== Modal da Câmera ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 30, 60, 0.7); /* Azul escuro translúcido */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,120,180,0.95), rgba(0,60,100,0.95));
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  max-width: 720px;
+  width: 92%;
+}
+
+.modal-title {
+  color: #ffffff;
+  margin: 6px 0 12px 0;
+  font-size: 18px;
+}
+
+.video-wrap {
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+video#video {
+  border-radius: 12px;
+  width: 640px;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+
+.controls {
+  display:flex;
+  gap: 14px;
+  margin-top: 12px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Botão circular foto */
+.botao-foto {
+  background-color: #00c0e8;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #00324a;
+}
+
+/* Botão fechar (canto) */
+.botao-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* status text */
+.modal-status {
+  color: #e0f7ff;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* ===== Modal da Câmera ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 30, 60, 0.7); /* Azul escuro translúcido */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background: linear-gradient(180deg, rgba(0,120,180,0.95), rgba(0,60,100,0.95));
+  border-radius: 18px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  max-width: 720px;
+  width: 92%;
+}
+
+.modal-title {
+  color: #ffffff;
+  margin: 6px 0 12px 0;
+  font-size: 18px;
+}
+
+.video-wrap {
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+video#video {
+  border-radius: 12px;
+  width: 640px;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+
+.controls {
+  display:flex;
+  gap: 14px;
+  margin-top: 12px;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Botão circular foto */
+.botao-foto {
+  background-color: #00c0e8;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: #00324a;
+}
+
+/* Botão fechar (canto) */
+.botao-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(255,255,255,0.06);
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* status text */
+.modal-status {
+  color: #e0f7ff;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+df-messenger {
+  transform: scale(0);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+df-messenger.aberto {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}

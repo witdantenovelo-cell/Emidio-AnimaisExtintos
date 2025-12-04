@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enciclopédia: Animais Marinhos Extintos</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Bibliotecas -->
+  <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+
+  <!-- Script principal -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="bolhas" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <header>
+    <h1>Enciclopédia: Animais Marinhos Extintos</h1>
+    <p>Reconstituições científicas e curiosidades — mergulhe nas criaturas que dominaram os mares do passado.</p>
+    <nav>
+      <button class="btn" id="abrirIA">IA de Reconhecimento</button>
+      <button class="btn" id="btnAbrirChatbot">Chat-bot</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="lista-especies">
+      <h2 id="lista-especies">Espécies em Destaque</h2>
+
+      <div class="grid" id="gridCards">
+  <article class="card">
+    <div class="img">
+      <img src="static/20251106_0812_Megalodon Realista_simple_compose_01k9cdtpypes09dyzmjgmg3hfs.png" alt="Megalodon">
+    </div>
+    <h3>Megalodon (<em>Otodus megalodon</em>)</h3>
+    <div class="meta">Mioceno–Plioceno (~23–3,6 Ma) • até 18 m • águas tropicais</div>
+    <div class="facts">O maior tubarão que já existiu, com dentes de até 18 cm. Caçava baleias e grandes peixes. Sua extinção está ligada ao resfriamento global e à redução das presas.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251106_0816_Dunkleosteus Realista_simple_compose_01k9cdz4m8ez9sbgz62jm7vh0d.png" alt="Dunkleosteus">
+    </div>
+    <h3>Dunkleosteus</h3>
+    <div class="meta">Devoniano (~380 Ma) • até 9 m • mares rasos</div>
+    <div class="facts">Peixe blindado com mandíbulas poderosas capazes de esmagar armaduras ósseas. Um dos primeiros superpredadores marinhos conhecidos.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251106_0836_Mosasaurus Realista_simple_compose_01k9cf4v9cetk815t3wzvka9yp.png" alt="Mosasaurus">
+    </div>
+    <h3>Mosasaurus</h3>
+    <div class="meta">Cretáceo (~82–66 Ma) • até 17 m • oceanos do Hemisfério Norte</div>
+    <div class="facts">Répteis marinhos carnívoros com mandíbulas duplas e cauda poderosa. Inspiraram o "Mosasaurus" dos filmes de Jurassic World.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251113_0821_Plesiossauro Realista_simple_compose_01k9yf24jbegct4bf9e51qp9sk.png" alt="Plesiosaurus">
+    </div>
+    <h3>Plesiosaurus</h3>
+    <div class="meta">Jurássico (~200 Ma) • até 4 m • mares europeus</div>
+    <div class="facts">Possuía pescoço longo e nadadeiras largas. Alimentava-se de peixes e lulas. Um dos mais icônicos répteis marinhos pré-históricos.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251106_0832_Ichthyosauria Realista_simple_compose_01k9ceyrpzehz913v8f98dgepc.png" alt="Ichthyosaurus">
+    </div>
+    <h3>Ichthyosaurus</h3>
+    <div class="meta">Jurássico (~200 Ma) • até 2 m • mares rasos e abertos</div>
+    <div class="facts">Com corpo semelhante a golfinhos, caçava peixes em alta velocidade. Tinha olhos grandes, adaptados para águas profundas e escuras.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251113_0827_Leedsichthys Realista_simple_compose_01k9yfe6teesdt60mks6x424f8.png" alt="Leedsichthys">
+    </div>
+    <h3>Leedsichthys</h3>
+    <div class="meta">Jurássico (~165 Ma) • até 16 m • mares temperados</div>
+    <div class="facts">O maior peixe ósseo conhecido. Alimentava-se por filtração, consumindo plâncton — como fazem as baleias modernas.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251113_0831_Tylosaurus Realista_simple_compose_01k9yfmsbaej0rxenaz0p8d9pd.png" alt="Tylosaurus">
+    </div>
+    <h3>Tylosaurus</h3>
+    <div class="meta">Cretáceo (~85 Ma) • até 14 m • mares da América do Norte</div>
+    <div class="facts">Um dos maiores mosassauros. Ágil e feroz, com dentes capazes de perfurar carapaças de tartarugas e presas ósseas.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251106_0818_Helicoprion Realista_simple_compose_01k9ce57n6eg1rdz8jf2qjve5b.png" alt="Helicoprion">
+    </div>
+    <h3>Helicoprion</h3>
+    <div class="meta">Pérmico (~290 Ma) • até 8 m • mares rasos</div>
+    <div class="facts">Famoso por sua mandíbula em forma de espiral de dentes — um dos designs mais estranhos da natureza.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251113_0835_Shonisaurus Realista_simple_compose_01k9yfx40cf4sa5bxxfe10xxh5.png" alt="Shonisaurus">
+    </div>
+    <h3>Shonisaurus</h3>
+    <div class="meta">Triássico (~210 Ma) • até 21 m • mares do Pacífico</div>
+    <div class="facts">Um dos maiores ictiossauros. Corpo longo e delgado, olhos gigantes e uma dieta baseada em lulas.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251113_0840_Thalassomedon Realista_simple_compose_01k9yg5gm5frer143thaswrbbp.png" alt="Thalassomedon">
+    </div>
+    <h3>Thalassomedon</h3>
+    <div class="meta">Cretáceo (~90 Ma) • até 12 m • mares do oeste americano</div>
+    <div class="facts">Seu nome significa “senhor do mar”. Um plesiossauro de pescoço longo que caçava em águas profundas.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251113_0843_Cretoxyrhina Realista_simple_compose_01k9ygbzxxesk9cstymwspggp3.png" alt="Cretoxyrhina">
+    </div>
+    <h3>Cretoxyrhina</h3>
+    <div class="meta">Cretáceo (~100–82 Ma) • até 7 m • oceanos globais</div>
+    <div class="facts">Conhecido como o "Tubarão Ginsu", caçava mosassauros e tartarugas marinhas. Um predador veloz e ágil.</div>
+  </article>
+
+  <article class="card">
+    <div class="img">
+      <img src="static/20251106_0838_Basilosaurus Realista_simple_compose_01k9cf999dew68k265qpxq4mb9.png" alt="Basilosaurus">
+    </div>
+    <h3>Basilosaurus</h3>
+    <div class="meta">Eoceno (~40 Ma) • até 20 m • mares quentes</div>
+    <div class="facts">Um ancestral das baleias modernas, com corpo alongado e dentes pontiagudos — caçava grandes peixes e golfinhos primitivos.</div>
+  </article>
+</div>
+
+      <div class="curio-list">
+        <h3>Curiosidades Rápidas</h3>
+        <ul id="listaCuriosidades">
+          <li>O registro fóssil marinho revela mudanças climáticas que impactaram espécies inteiras.</li>
+          <li>Algumas espécies voltaram ao mar após evoluírem em terra — como as baleias.</li>
+          <li>Fósseis de tubarões e répteis marinhos são encontrados em regiões hoje secas.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+ <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Robert"
+  agent-id="d396cafd-0d12-4f5a-bed2-ddbb355260d5"
+  language-code="pt-br"
+></df-messenger>
+  <!-- Modal da câmera (inicialmente escondido) -->
+  <div id="cameraModal" class="modal" aria-hidden="true" style="display:none;">
+    <div class="modal-content">
+      <button id="fecharModal" class="botao-fechar" title="Fechar">❌</button>
+      <h2 class="modal-title">Reconhecimento Facial</h2>
+      <div class="video-wrap">
+        <video id="video" autoplay muted playsinline></video>
+      </div>
+      <div class="controls">
+        <button id="tirarFoto" class="botao-foto" title="Tirar foto">📸</button>
+      </div>
+      <p id="modalStatus" class="modal-status">Aguardando...</p>
+      <canvas id="fotoCanvas" style="display:none;"></canvas>
+    </div>
+  </div>
+
+  <footer>© 2025 Enciclopédia Marinha — Conteúdo educativo</footer>
+  
+</body>
+</html>
